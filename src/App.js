@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+
+import Authentication from "./routes/authentication/authentication.components";
+import Registration from "./routes/registration/registration.components";
+import Booking from "./routes/booking/booking.components";
+import BookingPlaced from "./routes/booking-placed/booking-placed.components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' element={ <Registration /> } ></Route>
+      <Route path='/sign-in' element={ <Authentication /> }></Route>
+      <Route path='/booking' element={ <Booking /> }></Route>
+      <Route path='/booking/booking-placed' element={ <BookingPlaced /> }></Route>
+    </Routes>
   );
 }
 
